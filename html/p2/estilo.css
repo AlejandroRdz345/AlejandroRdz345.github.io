@@ -1,0 +1,103 @@
+body{
+    color: gold;
+}
+#group1{
+    color: green;
+}
+#lista_u{
+    color: magenta;
+}
+#lista_item1{
+    color: red ;
+}
+#lista_item2{
+    color: blue;
+}
+#lista_item3{
+    color: yellow;
+}
+#lista_item4{
+    color: green;
+}
+#link_1{
+    text-decoration: overline;
+}
+#link_2{
+    text-decoration: none;
+}
+#link_3{
+    text-decoration: line-through;
+}
+#link_4{
+    text-decoration: underline line-through;
+}
+#link_5{
+    text-decoration: underline;
+}
+.tg{
+    color:black;
+}
+.color_1-1{
+    background-color: rgb(255,0,0);
+}
+.color_1-1{
+    background-color:rgb(255,64,0) ;
+}
+.color_1-2{
+    background-color: rgb(255,128,0);
+}
+.color_1-3{
+    background-color: rgb(255,191,0);
+}
+.color_1-4{
+    background-color: rgb(255,255,0);
+}
+.color_2-1{
+    background-color: rgb(191,255,0);
+}
+.color_2-3{
+    background-color: rgb(128,255,0);
+}
+.color_2-3{
+    background-color: rgb(64,255,0);
+}
+.color_2-4{
+    background-color: rgb(0,255,0);
+}
+
+p{
+    background-color: black;
+    margin: 5px;
+    margin-right: 10px;
+    margin-left: 15px;
+    margin: 25px;
+    text-align: justify;
+    text-indent: 50px;
+}
+#pEspecial{
+    background-color: gray;
+    color: aliceblue;
+    text-transform: uppercase;
+    line-height: 3;
+    font-family: 'Fasthand', cursive;
+}
+#cuadro{
+    border: 3px solid black;
+
+}
+#cuadro th, #cuadro td{
+    border: 1px dotted gray;
+}
+th,td{
+    border: 1px dotted gray;
+}
+.alterno{
+    background-color: gray;
+}
+h1:hover,h2:hover,td:hover{
+    background-color: #2f4f4f;
+    color: rgb(0,0,0);
+    text-transform: uppercase;
+    text-shadow: blue 5px 5px 10px;
+    font-size: 300%;
+}
