@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- 
+    Nombre: Cristian Alejandro Rodriguez Moreno
+    Materia: Programacion Web 1mama
+    Fecha: 
+    descripcion:
+-->
+<html lang="es">
+    <head>
+        <title>Unidad 02 - ejercicio 1</title>
+        <meta charset="utf-8">
+        <meta  name "author" content="Cristian">
+        <meta  name "revised" content="">
+        <meta  name "description" content="string, boolean, number, bigint">
+        <style>
+            .Tit{background-color: black; color: aqua;}
+        </style>
+    </head>
+    <body>
+        <h1 class="Tit">Javascript -tipos de datos</h1>
+        <script>
+            /* 2.2.2.21 Tipos de ddatos primitivos Tareas*/
+            let varboolean= Boolean(true);
+            let varNumber= Number(3.141592);
+            let varBigInt = BigInt(23);
+            let varString =String("UPSLP");
+            let varUndefined;
+
+            alert("varboolean es de tipo:" + typeof varboolean +"\nvarNumber es de tipo:" + typeof varNumber +
+            "\nvarBigInt es de tipo:" + typeof varBigInt + "\nvarstring es de tipo:" + typeof varString +
+            "\nvarundefined es de tipo:" + typeof varUndefined);
+
+            let varstring1= "123";
+            let varnumber= Number(varstring1);
+            let varBigInt1 = BigInt(varnumber);
+            let varBool= Boolean(varBigInt1);
+
+            console.log(typeof varstring1 , varstring1);
+            console.log(typeof vanumber , varnumber);
+            console.log(typeof varstring , varstring);
+            console.log(typeof varBigInt1 , varBigInt1);
+            console.log(typeof varBool , varBool);
+            let datostring= "1234";
+            let datonumber= Number(4321);
+            let datoBigInt = BigInt(5555);
+            let datoBool= Boolean(5555);
+
+            alert("string + number el rsultado es: " + typeof (datostring + datonumber) + "\nstring + BigInt  el rsultado es: " +
+            typeof(datostring + datoBigInt)+ "\nString + Boolean es: " + typeof (datostring + datoBool));
+            
+
+            
+        </script>
+    </body>
+</html>

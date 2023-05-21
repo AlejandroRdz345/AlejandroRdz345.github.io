@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- 
+    Nombre: Cristian Alejandro Rodriguez Moreno
+    Materia: Programacion Web 1mama
+    Fecha: 
+    descripcion:
+-->
+<html lang="es">
+    <head>
+        <title>Unidad 02 - ejercicio 1</title>
+        <meta charset="utf-8">
+        <meta  name "author" content="Cristian">
+        <meta  name "revised" content="">
+        <meta  name "description" content="">
+        <style>
+            .Tit{background-color: black; color: aqua;}
+        </style>
+    </head>
+    <body onload="if(!confirm(('Acepta las cookies')))window.location='http://www.google.com.mx';">
+        <h1 class="Tit">Javascript -Funciones & Eventos</h1>
+        <h2> Javascript contenido en Etiqueta </h2>
+
+        <button onclick="document.body.style.backgroundColor='lightgreen';" ondblclick="alert('Hola mundo');">Cambia fondo</button>
+        <h2>Javascript contenido de funciones</h2>
+        <button id="btncolor">Cambia fondo</button>
+        <button id="btnsaludar">Saluda a todos</button>
+        <script>
+            /* Modo basico*/
+            let button=document.getElementById("btncolor");
+            function funcolor_a(){
+                document.body.style.backgroundColor='lightblue';
+            }
+            function funcolor_b(){
+                document.body.style.backgroundColor='pink';
+            }
+            button.addEventListener('click', funcolor_a);
+            button.addEventListener('dblclick', funcolor_b);
+            //modo optimizado
+            document.getElementById("btnsaludar").addEventListener('click', ()=>{alert("Holaalumnos de la UPSLP...\nTengan un buen dia..\n :)");});
+        </script>
+        <h2>Eventos del mause</h2>
+        <p style="background-color: aquamarine;" onmouseover="alert='Acaba de entrar del parrafo'" onmouseout="alert='Acaba de salir del parrafo'">puedes pasar por encima del parrafo o hacer clic</p>
+        <h2> Formulario</h2>
+        <label>Nombre: </label><input type="text" id="varnombre" placeholder="(Nombre)">
+        <input type="button" value="Accion" 
+        onclick="let varmensaje='Hola '+ documenty.getElementById('varnombre').value+', Como estas?';
+        document.getElementById('varresultado').value=varmensaje;alert(varmensaje);"><br>
+        <label>Resultado</label>
+        <input type="text" id="varresultado"placeholder="(Resultado)" readonly>
+        <table border="5">
+            <tr>
+                <th>Figuras</th>
+            <th>Variables</th>
+            <th>Resultados</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Cuadrado</td>
+                <td>Base<input type="number" id="varbase"></td>
+                <td rowspan="2">Area <input type="number" id="vararea"readonly>
+                <input type="button" value="Calcular" onclick="document.getElementById('vararea').value =document.getElementById('varbase').value * document.getElementById('varaltura').value"></td>
+            </tr>
+            <tr>
+                <td> Altura<input type="number" id="varaltura"></td>
+            </tr>
+            <tr>
+                <td>Cubo</td>
+                <td>Profundidad<input type="number" id="varprofundidad"></td>
+                <td>Volumen
+                    <input type="button" value="Calcular" onclick="document.getElementById('varvolumen').value =document.getElementById('varbase').value * document.getElementById('varaltura').value*document.getElementById('varprofundidad').value">
+                    <input type="number" id="varvolumen" readonly></td>
+            </tr>
+            
+        </table>
+        
+        <h2>Geolocalización</h2>
+        <button onclick="getlocation()">obtener coordenadas</button>
+        <p id="data"></p>
+        <p id="map"></p>
+        <script>
+
+          function getlocation(){
+            if(navigator.geolocation) {navigator.geolocation.getCurrentPosition(showPosition);}
+            else{alert("Geolocalización no soportada por el navegador...");}
+          }
+          function showPosition(position){
+            document.getElementById("data").innerHTML ="Latitud:" + position.coords.latitude;
+            document.getElementById("data").innerHTML += "<br>Longitud:" + position.coords.longitude;
+            var latlon = position.coords.latitude +"," + position.coords.longitude;
+            latlon = '22.121929, -100.984327'; //posición de la upslp
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
+            document.getElementById("map").innerHTML = "<img src= '" + img_url + "'>";
+
+          }
+        </script>     
+        <h2>Google Maps</h2>       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.0952796656074!2d-100.98682832553344!3d22.122342649323834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a9f5412c6b56f%3A0xe1b3dea4c6aa1c03!2sUniversidad%20Polit%C3%A9cnica%20de%20San%20Luis%20Potos%C3%AD!5e0!3m2!1ses!2smx!4v1684345544781!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <br><button onclick="aumentacontador_1();">Contador N1</button>
+        <label>Contador N1</label>
+        <input type="number" id="varcontador1" placeholder="(Contador No1)">
+        <br>
+        <button onclick="aumentacontador_2();">Contador N2</button>
+        <label>Contador N2</label>
+        <input type="number" id="varcontador2" placeholder="(Contador No2)">
+        <script>
+            function aumentacontador_1(){
+                if (typeof(Storage)!="undefined"){
+                    if (localStorage.contador_1){
+                        localStorage.contador_1++;
+                    }else{
+                        localStorage.contador_1=1;
+                        document.getElementById('varcontador1').value=localStorage.contador_1;
+                    }
+                }else{
+                    alert("Almacenamiento no soportada por el navegador");
+                }
+            }
+            function aumentacontador_2(){
+                if (typeof(Storage)!="undefined"){
+                    if(sessionStorage.contador_2){
+                        sessionStorage.contador_2++;
+                    }else{
+                        sessionStorage.contador_2=1;
+                        document.getElementById('varcontador2').value=sessionStorage.contador_2;
+                    }
+                }else{
+                    alert("Almacenamiento no soportada por el navegador");
+                }
+            }
+            
+        </script>
+    </body>
+</html>
